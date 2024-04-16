@@ -1,24 +1,24 @@
 import { Component } from '@angular/core';
-import { WorldBankApiClient } from '../api/client/worldbank.client'
+import { WorldBankClient } from '../api/client/worldbank.client';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-world',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './world.component.html',
   styleUrl: './world.component.css'
 })
 export class WorldComponent {
   info: any = {};
 
-  constructor (private worldBankApiClient: WorldBankApiClient) {}
+  constructor (private worldBankClient: WorldBankClient) {}
 
   setCountryInfo(event: any) {
     console.log('event', event.target.getAttribute('id'));
-    this.worldBankApiClient.setCountryInfo(event.target.getAttribute('id')).subscribe((data: any) => {
+    this.worldBankClient.getCountryInfo(event.target.getAttribute('id')).subscribe((data: any) => {
       this.info = {
-        ...data,
-        state: event.target.getAttribute('id')
+        ...data
       }
     })
   }

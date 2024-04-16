@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { WorldBankApiClient } from './api/client/worldbank.client';
+import { WorldBankClient } from './api/client/worldbank.client';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,6 @@ import { WorldBankApiClient } from './api/client/worldbank.client';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  constructor(private worldBankApiClient: WorldBankApiClient) { }
+  constructor(private worldBankClient: WorldBankClient) { }
   title = 'WorldMap';
 }
