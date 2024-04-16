@@ -18,7 +18,8 @@ export class WorldComponent {
     console.log('event', event.target.getAttribute('id'));
     this.worldBankClient.getCountryInfo(event.target.getAttribute('id')).subscribe((data: any) => {
       this.info = {
-        ...data
+        ...data,
+        Country: event.target.getAttribute('title')
       }
     })
   }

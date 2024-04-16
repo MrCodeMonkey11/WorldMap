@@ -15,12 +15,11 @@ export class WorldBankClient {
     this.http.get("https://api.worldbank.org/v2/country/" + country + "?format=json").subscribe((data: any) => {
       console.log(data);
       subject.next({
-        country: data.title,
-        Capital: data.capitalCity,
-        Region: data.region,
-        Income: data.incomeLevel,
-        Longitude: data.longitude,
-        Latitude: data.latitude
+        Capital: data[1][0].capitalCity,
+        Region: data[1][0].region,
+        Income: data[1][0].incomeLevel,
+        Longitude: data[1][0].longitude,
+        Latitude: data[1][0].latitude
       })
      })
 
