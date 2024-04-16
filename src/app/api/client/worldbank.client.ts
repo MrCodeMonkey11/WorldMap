@@ -13,6 +13,7 @@ export class WorldBankClient {
     let subject = new Subject();
 
     this.http.get("https://api.worldbank.org/v2/country/" + country + "?format=json").subscribe((data: any) => {
+      console.log(data);
       subject.next({
         country: data.title,
         Capital: data.capitalCity,

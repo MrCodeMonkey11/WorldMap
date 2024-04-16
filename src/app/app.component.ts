@@ -10,6 +10,6 @@ import { WorldBankClient } from './api/client/worldbank.client';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  constructor(private worldBankClient: WorldBankClient) { }
+  constructor(private worldBankClient: WorldBankClient) {}
   title = 'WorldMap';
 }
