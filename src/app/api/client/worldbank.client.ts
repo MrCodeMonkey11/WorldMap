@@ -16,8 +16,8 @@ export class WorldBankApiClient {
       console.log('WorldBank API response', data);
       subject.next({
         Capital: data[1][0].capitalCity,
-        Region: data[1][0].region,
-        Income: data[1][0].incomeLevel,
+        Region: data[1][0].region.value,
+        Income: data[1][0].incomeLevel.value,
         Longitude: data[1][0].longitude,
         Latitude: data[1][0].latitude
       })
