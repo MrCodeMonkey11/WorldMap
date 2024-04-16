@@ -1286,7 +1286,7 @@
  </svg>
  </section>
 <section class="country-details">
-    <div>
+    <div *ngIf="info.Country">
     <h3> {{ info.Country }} </h3> <p> Capital City: {{ info.Capital }} </p> <p> Longitude: {{ info.Longitude }} </p> <p> Latitude: {{ info.Latitude }} </p> <p> Income Level: {{ info.incomeLevel }} </p> <p> Region: {{ info.region }} </p>
     </div>
 </section>
