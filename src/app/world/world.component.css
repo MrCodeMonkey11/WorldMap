@@ -11,6 +11,7 @@ main {
     background-color: gray;
     border-radius: 25%;
     width: 25%;
+    flex-wrap: wrap;
 }
 
 path:hover {
