@@ -12,11 +12,11 @@ import { CommonModule } from '@angular/common';
 export class WorldComponent {
   info: any = {};
 
-  constructor (private WorldBankApiClient: WorldBankApiClient) {}
+  constructor (private worldBankApiClient: WorldBankApiClient) {}
 
   setCountryInfo(event: any) {
     console.log('MouseEvent country ID', event.target.getAttribute('id'));
-    this.WorldBankApiClient.getCountryInfo(event.target.getAttribute('id')).subscribe((data: any) => {
+    this.worldBankApiClient.getCountryInfo(event.target.getAttribute('id')).subscribe((data: any) => {
       this.info = {
         ...data,
         Country: event.target.getAttribute('title')
