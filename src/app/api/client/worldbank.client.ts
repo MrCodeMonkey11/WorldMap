@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class WorldBankClient {
+export class WorldBankApiClient {
 
   constructor(private http: HttpClient) { }
 
@@ -13,7 +13,7 @@ export class WorldBankClient {
     let subject = new Subject();
 
     this.http.get("https://api.worldbank.org/v2/country/" + country + "?format=json").subscribe((data: any) => {
-      console.log(data);
+      console.log('WorldBank API response', data);
       subject.next({
         Capital: data[1][0].capitalCity,
         Region: data[1][0].region,

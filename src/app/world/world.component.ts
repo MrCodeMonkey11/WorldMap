@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { WorldBankClient } from '../api/client/worldbank.client';
+import { WorldBankApiClient } from '../api/client/worldbank.client';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -12,11 +12,11 @@ import { CommonModule } from '@angular/common';
 export class WorldComponent {
   info: any = {};
 
-  constructor (private worldBankClient: WorldBankClient) {}
+  constructor (private WorldBankApiClient: WorldBankApiClient) {}
 
   setCountryInfo(event: any) {
-    console.log('event', event.target.getAttribute('id'));
-    this.worldBankClient.getCountryInfo(event.target.getAttribute('id')).subscribe((data: any) => {
+    console.log('MouseEvent country ID', event.target.getAttribute('id'));
+    this.WorldBankApiClient.getCountryInfo(event.target.getAttribute('id')).subscribe((data: any) => {
       this.info = {
         ...data,
         Country: event.target.getAttribute('title')
