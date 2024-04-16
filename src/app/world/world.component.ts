@@ -14,11 +14,11 @@ export class WorldComponent {
   constructor (private worldBankApiClient: WorldBankApiClient) {}
 
   setCountryInfo(event: any) {
-    console.log('event', event.target.name);
-    this.worldBankApiClient.setCountryInfo(event.target.name).subscribe((data: any) => {
+    console.log('event', event.target.getAttribute('id'));
+    this.worldBankApiClient.setCountryInfo(event.target.getAttribute('id')).subscribe((data: any) => {
       this.info = {
         ...data,
-        state: event.target.getAttribute('title')
+        state: event.target.getAttribute('id')
       }
     })
   }
